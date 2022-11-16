@@ -48,7 +48,8 @@ inputs = {
   #Namespace Creation 
   foundationlayer_namespace   =  [ { "namespace_name" : "lb" },{ "namespace_name" : "argocd" },
                                 { "namespace_name" : "istio-system" },
-                                { "namespace_name" : "external-dns" },{ "namespace_name" : "cluster-autoscaler" }]
+                                { "namespace_name" : "external-dns" },{ "namespace_name" : "cluster-autoscaler" },
+                                { "namespace_name" : "istio-gateway" }]
   
   app_namespace               = [ {"namespace_name" : "core" },{ "namespace_name" : "io" },
                                 { "namespace_name" : "ia" },{ "namespace_name" : "istio-ingress" },{ "namespace_name" : "ui" }]
