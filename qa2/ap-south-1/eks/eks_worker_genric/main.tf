@@ -1,8 +1,8 @@
-variable "region" {} #Needtomodify
-variable "cluster_name" {} #Needtomodify
-#variable "asg_prefix" {} #Needtomodify
-variable "keyname" {} #Needtomodify
-#variable "cluster_env" {} #Needtomodify
+variable "region" {} 
+variable "cluster_name" {} 
+#variable "asg_prefix" {} 
+variable "keyname" {} 
+#variable "cluster_env" {}
 variable "servicename" {default = "eksworker"}
 variable "alertgroup" {default = "devops_team"}
 variable "root_volume_size" {default = "100"}
@@ -54,7 +54,7 @@ data "aws_subnet_ids" "worker" {
 } 
 
 module "eks_workers" {  
-  source = "D:\\AWS-TF\\tf-helm-singsub-oidc\\infra-terraform\\modules\\eks_workers_generic"
+  source = "git::https://github.com/danielarockia/qa2-modules.git//eks_workers_generic"
   asg_prefix    = "${var.cluster_name}"
   cluster_name    = "${var.cluster_name}"
   alertgroup     = "${var.alertgroup}"

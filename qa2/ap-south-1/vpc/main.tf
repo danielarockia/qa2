@@ -5,15 +5,15 @@ variable "private_subnets_count" {}
 variable "name_prefix" {}
 
 provider "aws" {
-  region = "${var.region}"
+  region = var.region
 }
 
 
 module "subnet" {
-  source      = "D:\\AWS-TF\\tf-helm-singsub-oidc\\infra-terraform\\modules\\subnet"
-  name_prefix = var.name_prefix
-  newbits     = var.newbits
-  subnets_count = var.subnets_count
+  source                = "git::https://github.com/danielarockia/qa2-modules.git//vpc"
+  name_prefix           = var.name_prefix
+  newbits               = var.newbits
+  subnets_count         = var.subnets_count
   private_subnets_count = var.private_subnets_count
   tags = {
 

@@ -1,15 +1,15 @@
 variable "domain" {}
 
 variable "records" {
-    type = list
+  type = list(any)
 }
 variable "cluster_name" {
   type = string
 }
 
 module "private_zone" {
-  source = "D:\\AWS-TF\\tf-helm-singsub-oidc\\infra-terraform\\modules\\privatehostedzone"
-  domain = var.domain
-  records = var.records
+  source       = "git::https://github.com/danielarockia/qa2-modules.git//privatehostedzone"
+  domain       = var.domain
+  records      = var.records
   cluster_name = var.cluster_name
 }

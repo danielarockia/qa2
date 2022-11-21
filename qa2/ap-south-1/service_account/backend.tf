@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     bucket  = "ekstg-terraform-state"
     encrypt = true
-    key     = "dev/ap-south-1/oidc/terraform1.tfstate"
+    key     = "qa2/ap-south-1/service_account/terraform1.tfstate"
     region  = "us-east-2"
   }
 }

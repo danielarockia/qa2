@@ -1,6 +1,6 @@
-variable "env" {} #Needtomodify (it should be same as what we give 'env' variable in iam main.tf)
-variable "region" {} #Needtomodify
-variable "cluster_name" {} #Needtomodify
+variable "env" {}
+variable "region" {}
+variable "cluster_name" {}
 variable "servicename" {default = "eksworker"}
 variable "alertgroup" {default = "devops_team"}
 variable "k8s_version" {} 
@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 module "eks_controlplane_generic" {
-  source                = "D:\\AWS-TF\\tf-helm-singsub-oidc\\infra-terraform\\modules\\eks_controlplane_generic"
+  source                = "git::https://github.com/danielarockia/qa2-modules.git//eks_controlplane_generic"
   name_prefix           = var.cluster_name
   k8s_version           = var.k8s_version
   private_endpoint      = false

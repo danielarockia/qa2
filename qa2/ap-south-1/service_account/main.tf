@@ -1,11 +1,12 @@
 variable "cluster_name" {}
 variable "env" {}
+variable "region" {}
 
+module "service_account" {
 
-module "oidc" {
-
-  source = "D:\\AWS-TF\\tf-helm-singsub-oidc\\infra-terraform\\modules\\oidc"
+  source       = "git::https://github.com/danielarockia/qa2-modules.git//service_account"
   cluster_name = var.cluster_name
-  env = var.env
+  env          = var.env
+  region       = var.region
 
 }
